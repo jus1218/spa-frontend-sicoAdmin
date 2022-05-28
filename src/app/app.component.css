@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+.color-text {
+  color: cornflowerblue;
+}
+.dropdown-menu,.dropDown-item {
+  text-align: center;
+  text-decoration: none;
+
+}

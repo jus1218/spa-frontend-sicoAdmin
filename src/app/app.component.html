@@ -1,0 +1,64 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"
+      >Sico<span class="color-text">Admin</span></a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['']"
+            >Inicio <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['']">Administrar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['']">Consultar</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-rigth">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['']">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['']">Cerrar sesion</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-rigth">
+        
+        <li>
+          <!---Imagen-->
+          <button class="subnavbtn">Usuarios <i class="fa" *ngIf="usuarios"></i></button>
+          <div class="subnav-content">
+            <span *ngFor="let usr of usuarios">
+              <a >{{usr.nombre}}</a>
+            </span>
+          </div>
+        </li>
+
+        <li class="navbar-item dropdown">
+          <a class="navbar-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Usuario<!--Reemplazar la palabra por el usuario registrado--></a>
+          <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+            <a [routerLink]="['']" class="dropDown-item">Perfil</a><br>
+            <a [routerLink]="['']" class="dropDown-item">Cerrar</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>
