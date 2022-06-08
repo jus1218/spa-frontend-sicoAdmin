@@ -1,0 +1,73 @@
+<div class="col-md-12 mt-4">
+  <div class="col-md-12 mt-4 align-items-center justify-content-center">
+    <h3 class="d-flex mt-4 justify-content-center">Registro de Condomino</h3>
+    <h6 class="d-flex justify-content-center">
+      Registrarte y aprovecha de sus beneficios
+    </h6>
+  </div>
+
+  <form
+    class="col-md-6 mr-auto ml-auto"
+    #registerForm="ngForm"
+    (ngSubmit)="onSubmit(registerForm)"
+  >
+    <div class="form-group">
+      <label for="">Digite del propietario</label>
+      <input
+        type="text"
+        name="propietario"
+        class="form-control"
+        required
+        pattern="[a-zA-Z]+"
+        #propietario="ngModel"
+        [(ngModel)]="condomino.propietario"
+      />
+      <small
+        class="text-alert"
+        *ngIf="!propietario.valid && propietario.touched"
+        >El nombre no cumple con las reglas de entrada</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="">Digite el numero de filial</label>
+      <input
+        type="number"
+        name="numFilial"
+        class="form-control"
+        required
+        min="1"
+        #numFilial="ngModel"
+        [(ngModel)]="condomino.numFilial"
+      />
+      <small class="text-alert" *ngIf="!numFilial.valid && numFilial.touched"
+        >El numero de filial no cumple con las reglas de entrada</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="sel1">Seleccione el usuario:</label>
+      <select
+        nam
+        class="form-control"
+        id="sel1"
+        #numUsuario="ngModel"
+        [(ngModel)]="condomino.usuario"
+      >
+        <option *ngFor="let user of users" [value]="user.id">
+          {{ user.nombre }}
+        </option>
+      </select>
+      <small class="text-alert" *ngIf="!numUsuario.valid && numUsuario.touched"
+        >El nombre no cumple con las reglas de entrada</small
+      >
+    </div>
+
+    <input
+      type="submit"
+      value="Registrarse"
+      class="btn btn-success"
+      [disabled]="registerForm.invalid"
+    />
+  </form>
+</div>

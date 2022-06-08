@@ -21,42 +21,48 @@
             >Inicio <span class="sr-only">(current)</span></a
           >
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['']">Administrar</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Administrar
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['lista-usuario']">Usuarios</a>
+            <a class="dropdown-item" [routerLink]="['lista-condomino']">Condominos</a>
+            <a class="dropdown-item" href="#">Proveedores</a>
+            <a class="dropdown-item" href="#">Productos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Comprar Productos </a>
+            <a class="dropdown-item" href="#">Pagar a Colaboradores </a>
+            <a class="dropdown-item" href="#">Fondo Condominal </a>
+          </div>
+
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['']">Consultar</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pagos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['']">Pagar Cuota</a>
+          </div>
+
         </li>
       </ul>
       <ul class="navbar-nav navbar-rigth">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['']">Login</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['']">Cerrar sesion</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Configuracion
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['lista-usuario']">Perfil</a>
+            <a class="dropdown-item" [routerLink]="['registro-usuario']">Cerrar sesion</a>
+          </div>
+  
         </li>
       </ul>
-      <ul class="navbar-nav navbar-rigth">
-        
-        <li>
-          <!---Imagen-->
-          <button class="subnavbtn">Usuarios <i class="fa" *ngIf="usuarios"></i></button>
-          <div class="subnav-content">
-            <span *ngFor="let usr of usuarios">
-              <a >{{usr.nombre}}</a>
-            </span>
-          </div>
-        </li>
-
-        <li class="navbar-item dropdown">
-          <a class="navbar-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Usuario<!--Reemplazar la palabra por el usuario registrado--></a>
-          <div aria-labelledby="navbarDropdown" class="dropdown-menu">
-            <a [routerLink]="['']" class="dropDown-item">Perfil</a><br>
-            <a [routerLink]="['']" class="dropDown-item">Cerrar</a>
-          </div>
-        </li>
-
-      </ul>
+      
     </div>
   </nav>
 

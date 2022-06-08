@@ -1,0 +1,60 @@
+<div class="container">
+  <div
+    style="background-color: antiquewhite"
+    class="col-md-12 d-flex justify-content-center align-item-center mt-4"
+  >
+    <h2>Lista de usuarios registrados</h2>
+  </div>
+
+  <div class="col-md-6">
+    <form class="d-flex mt-4">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="filterUser"
+        name="filterUser"
+      />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="col mt-4">
+    <button
+      type="button"
+      [routerLink]="['../registro-usuario']"
+      class="btn btn-primary col-sm-12 col-md-4 col-lg-2"
+    >
+      Crear Usuario
+    </button>
+  </div>
+
+  <div class="col-sm-12 mt-4">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Email</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!---
+        | filter:filterUser
+        -->
+        <tr *ngFor="let usr of usuarios">
+          <th scope="row">{{ usr.id }}</th>
+          <td>{{ usr.nombre }}</td>
+          <td>{{ usr.email }}</td>
+          <td>{{ usr.tipo }}</td>
+          <td>{{ usr.estado }}</td>
+          <td><span class="material-icons">edit</span><span>Eliminar</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

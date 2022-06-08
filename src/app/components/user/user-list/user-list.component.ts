@@ -1,19 +1,18 @@
-import { Component } from '@angular/core';
-import { UserService } from './services/user.service';
-import { User } from './models/user';
+import { Component, OnInit } from '@angular/core';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
+import { User } from '../../../models/user';
+import { UserService } from '../../../services/user.service';
+import { timer } from 'rxjs';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [UserService],
+  selector: 'app-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.css'],
+  providers: [UserService]
 })
-export class AppComponent {
+export class UserListComponent implements OnInit {
 
-  constructor(){}
-
-  /*
-  
-    //title = 'spa-frontend-sico';
+  filterUser = '';
   public usuarios: any;
   private checkUsers;
   constructor(public _userService: UserService) {
@@ -22,6 +21,9 @@ export class AppComponent {
     this.checkUsers = setInterval(() => {
       this.loadUsers();
     }, 10000);
+  }
+
+   ngOnInit(): void {
   }
 
   public loadUsers() {
@@ -41,8 +43,5 @@ export class AppComponent {
     });
   }
   
-  
-  
-  
-  */
+
 }
