@@ -18,7 +18,7 @@
         name="propietario"
         class="form-control"
         required
-        pattern="[a-zA-Z]+"
+        pattern="[a-z A-Z]{0,20}"
         #propietario="ngModel"
         [(ngModel)]="condomino.propietario"
       />
@@ -48,13 +48,13 @@
     <div class="form-group">
       <label for="sel1">Seleccione el usuario:</label>
       <select
-        nam
+        name="numUsuario"
         class="form-control"
         id="sel1"
         #numUsuario="ngModel"
         [(ngModel)]="condomino.usuario"
       >
-        <option *ngFor="let user of users" [value]="user.id">
+        <option *ngFor="let user of users" [value]="user.id" >
           {{ user.nombre }}
         </option>
       </select>

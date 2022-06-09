@@ -1,0 +1,66 @@
+<div class="col-md-12 mt-4">
+    <div class="col-md-12 mt-4  align-items-center justify-content-center">
+      <h3 class="d-flex mt-4 justify-content-center">Registro de proveedor</h3>
+      <h6 class="d-flex justify-content-center">Ingresa todos los datos correspondientes</h6>
+    </div>
+
+    <form
+      class="col-md-6 mr-auto ml-auto"
+      #registerForm="ngForm"
+      (ngSubmit)="onSubmit(registerForm)"
+    >
+      <div class="form-group">
+        <label for="">Digite el nombre</label>
+        <input
+          type="text"
+          name="nombre"
+          class="form-control"
+          required
+          
+          pattern="[a-z A-Z]{0,25}$"
+          #nombre="ngModel"
+          [(ngModel)]="proveedor.nombre"
+        />
+        <small class="text-alert" *ngIf="!nombre.valid && nombre.touched"
+          >El nombre no cumple con las reglas de entrada</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="">Digite la descripcion</label>
+        <input
+          type="text"
+          name="email"
+          class="form-control"
+          required
+          
+          #descripcion="ngModel"
+          [(ngModel)]="proveedor.descripcion"
+        />
+        <small class="text-alert" *ngIf="!descripcion.valid && descripcion.touched"
+          >La descripcion no cumple con las reglas de entrada</small
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="">Digite el telefono</label>
+        <input
+          type="text"
+          name="contrasena"
+          class="form-control"
+          required="[0-9]{0,12}$"
+          #telefono="ngModel"
+          [(ngModel)]="proveedor.telefono"
+        />
+        <small class="text-alert" *ngIf="!telefono.valid && telefono.touched"
+          >El telefono no cumple con las reglas de entrada</small
+        >
+      </div>
+      <input
+        type="submit"
+        value="Registrarse"
+        class="btn btn-success"
+        [disabled]="registerForm.invalid"
+        
+      />
+    </form>
+  </div>

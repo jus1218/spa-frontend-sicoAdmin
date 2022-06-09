@@ -62,12 +62,6 @@ export class CondominoRegisterComponent implements OnInit {
     });
   }
 
- 
-
-
-  
-  
-  
    public loadUsers() {
     this._userService.getUsers().subscribe({
       next: (response: any) => {

@@ -1,0 +1,48 @@
+<div class="container">
+    <div
+      style="background-color: antiquewhite"
+      class="col-md-12 d-flex justify-content-center align-item-center mt-4"
+    >
+      <h2>FONDO CONDOMINAL</h2>
+    </div>
+  
+  
+
+    <!--
+  <div class="col mt-4">
+      <button
+        type="button"
+        [routerLink]="['../registro-fondo']"
+        class="btn btn-primary col-sm-12 col-md-4 col-lg-2"
+      >
+        Crear Condomino
+      </button>
+    </div>
+
+    -->
+  
+    <div class="col-sm-12 mt-4">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">monto</th>
+            <th scope="col">ultima actualizacion</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!---
+          | filter:filterUser
+          -->
+          <tr *ngFor="let f of fondo">
+            <th scope="row">{{ f.id }}</th>
+            <td>{{ f.monto }}</td>
+            <td>{{ f.updated_at }}</td>
+            <td><span class="material-icons">edit</span><span>Eliminar</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

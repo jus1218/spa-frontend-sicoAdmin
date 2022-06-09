@@ -63,9 +63,8 @@
       <input
         type="text"
         name="contrasena"
-      
         class="form-control"
-        required
+        required="(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$"
         #contrasena="ngModel"
         [(ngModel)]="user.contrasena"
       />

@@ -24,13 +24,13 @@ export class CondominoService {
   getCondominos(): Observable<any> {
     let headers = new HttpHeaders().set(
       'Content-type',
-      'application/x-www-form-urlenconded'
+      'application/x-www-form-urlencoded'
     );
     return this._http.get(this.url + 'condomino', { headers: headers });
   }
 
-  register(user: Condomino): Observable<any> {
-    let data = JSON.stringify(user);
+  register(condomino: Condomino): Observable<any> {
+    let data = JSON.stringify(condomino);
     let params = 'json=' + data;
     let httpHeaders = new HttpHeaders().set(
       'Content-Type',

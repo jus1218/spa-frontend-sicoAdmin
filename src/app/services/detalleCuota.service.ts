@@ -1,25 +1,27 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { global } from './configuration';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../models/user';
+import { global } from './configuration';
+import { DetalleCuota } from '../models/detalleCuota';
+
 @Injectable()
-export class UserService {
+export class DetalleCuotaService {
+
   public url: string;
   constructor(public _http: HttpClient) {
     this.url = global.url;
   }
-  //Retorna un hilo, hace peticion
-  getUsers(): Observable<any> {
+
+  getCuotas(): Observable<any> {
     let headers = new HttpHeaders().set(
       'Content-type',
       'application/x-www-form-urlencoded'
     );
-    return this._http.get(this.url + 'user', { headers: headers });
+    return this._http.get(this.url + 'detallecuota', { headers: headers });
   }
 
-  register(user: User): Observable<any> {
-    let data = JSON.stringify(user);
+  register(detalleC: DetalleCuota): Observable<any> {
+    let data = JSON.stringify(detalleC);
     let params = 'json=' + data;
     let httpHeaders = new HttpHeaders().set(
       'Content-Type',
@@ -28,6 +30,6 @@ export class UserService {
     let options = {
       headers: httpHeaders,
     };
-    return this._http.post(this.url + 'user', params, options);
+    return this._http.post(this.url + 'detallecuota', params, options);
   }
 }

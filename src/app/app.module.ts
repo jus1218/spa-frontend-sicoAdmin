@@ -12,6 +12,12 @@ import { UserRegisterComponent } from './components/user/user-register/user-regi
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { CondominoRegisterComponent } from './components/condomino/condomino-register/condomino-register.component';
 import { CondominoListComponent } from './components/condomino/condomino-list/condomino-list.component';
+import { CuotaListComponent } from './components/cuota/cuota-list/cuota-list.component';
+import { CuotaRegisterComponent } from './components/cuota/cuota-register/cuota-register.component';
+import { FondoListComponent } from './components/fondo/fondo-list/fondo-list.component';
+import { ProveedorListComponent } from './components/proveedor/proveedor-list/proveedor-list.component';
+import { ProveedorRegisterComponent } from './components/proveedor/proveedor-register/proveedor-register.component';
+
 /**
  * SUPER IMPORTANTE:
  *  SI BORRAR POR ERROR UNA CARPETA COMPONENT, EN LA DIRECTIVAS LE VA SILIR ERROR
@@ -29,7 +35,11 @@ import { CondominoListComponent } from './components/condomino/condomino-list/co
     UserListComponent,
     CondominoRegisterComponent,
     CondominoListComponent,
-    
+    CuotaListComponent,
+    CuotaRegisterComponent,
+    FondoListComponent,
+    ProveedorListComponent,
+    ProveedorRegisterComponent,
   ],
   imports: [
     BrowserModule,

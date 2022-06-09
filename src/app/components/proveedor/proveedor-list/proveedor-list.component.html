@@ -1,0 +1,60 @@
+<div class="container">
+    <div
+      style="background-color: antiquewhite"
+      class="col-md-12 d-flex justify-content-center align-item-center mt-4"
+    >
+      <h2>Lista de proveedores registrados</h2>
+    </div>
+  
+
+    <!---        [(ngModel)]="filterCondo"       -->
+    <div class="col-md-6">
+      <form class="d-flex mt-4">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          name="filterProveedor"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  
+    <div class="col mt-4">
+      <button
+        type="button"
+        [routerLink]="['../registro-proveedor']"
+        class="btn btn-primary col-sm-12 col-md-4 col-lg-2"
+      >
+        Crear Proveedor
+      </button>
+    </div>
+  
+    <div class="col-sm-12 mt-4">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!---
+          | filter:filterUser
+          -->
+          <tr *ngFor="let proveedor of proveedores">
+            <th scope="row">{{ proveedor.id }}</th>
+            <td>{{ proveedor.nombre }}</td>
+            <td>{{ proveedor.descripcion }}</td>
+            <td>{{ proveedor.telefono }}</td>
+            <td><span class="material-icons">edit</span><span>Eliminar</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
